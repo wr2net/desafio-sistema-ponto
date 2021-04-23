@@ -38,9 +38,9 @@ Senha: 123456
 ## Telas do Sistema
 
 ![Home](storage/images/01.Home.png)
-![Home](storage/images/02.Login.png)
-![Home](storage/images/03.Painel.png)
-![Home](storage/images/04.Usuarios.png)
-![Home](storage/images/05.Colaboradores.png)
-![Home](storage/images/06.Horas-doColaborador.png)
-![Home](storage/images/07.Hora-Todos-Colaboradores.png)
+![Login](storage/images/02.Login.png)
+![Painel](storage/images/03.Painel.png)
+![Usuarios](storage/images/04.Usuarios.png)
+![Colaboradores](storage/images/05.Colaboradores.png)
+![Horas do Colaborador](storage/images/06.Horas-do-Colaborador.png)
+![Horas de Todos os Colaboradores](storage/images/07.Hora-Todos-Colaboradores.png)
