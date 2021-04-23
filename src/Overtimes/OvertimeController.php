@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Users;
+namespace App\Overtimes;
 
 use App\Model\Query;
 
 /**
- * Class UserController
- * @package App\Users\Controllers
+ * Class OvertimeController
+ * @package App\Overtimes
  */
-class UserController
+class OvertimeController
 {
-    CONST TABLE = 'users';
+    CONST TABLE = 'overtimes';
 
     /**
      * @return array|\Exception|\PDOException
@@ -18,6 +18,17 @@ class UserController
     public function index()
     {
         return (new Query())->findAll(self::TABLE);
+    }
+
+    /**
+     * @param $table
+     * @param $key
+     * @param $value
+     * @return array|\Exception|\PDOException
+     */
+    public function findJoin($table)
+    {
+        return (new Query())->getJoin(self::TABLE, $table);
     }
 
     /**
@@ -36,6 +47,15 @@ class UserController
     public function show($id)
     {
         return (new Query())->findById(self::TABLE, $id);
+    }
+
+    /**
+     * @param $id
+     * @return \Exception|mixed|\PDOException
+     */
+    public function findByUser($id)
+    {
+        return (new Query())->findByUser(self::TABLE, $id);
     }
 
     /**

@@ -1,0 +1,58 @@
+<?php
+$id = "";
+$name = "";
+$email = "";
+if (isset($user['id'])) {
+    $id = $user['id'];
+}
+if (isset($user['name'])) {
+    $name = $user['name'];
+}
+if (isset($user['email'])) {
+    $email = $user['email'];
+}
+include "Layout/header.phtml";
+?>
+    <section class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        Cadastrar/Editar Usuário
+                        <a href="/users"><button class="btn-sm btn-primary custom-right"><i class="fa fa-arrow-left"></i></button></a>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div style="margin: 0 auto 0 auto; height: auto; width: 50%;">
+                                <form method="post" action="/users/save">
+                                    <input type="hidden" name="id" value="<?php echo $id; ?>">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon1">Nome</span>
+                                        </div>
+                                        <input type="text" name="name" class="form-control" autocomplete="off" placeholder="Informe o nome do Usuário." value="<?php echo $name; ?>" aria-label="Nome" aria-describedby="basic-addon1">
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon1">E-mail</span>
+                                        </div>
+                                        <input type="email" name="email" class="form-control" autocomplete="off" placeholder="Informe um e-mail válido." value="<?php echo $email; ?>" aria-label="E-mail" aria-describedby="basic-addon1" required>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon1">Senha</span>
+                                        </div>
+                                        <input type="password" name="password" class="form-control" autocomplete="off" placeholder="**********" aria-label="Password" aria-describedby="basic-addon1"<?php if (is_null($id)) echo "required"; ?>>
+                                    </div>
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-success btn-sm">Salvar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<?php include 'Layout/footer.phtml';?>

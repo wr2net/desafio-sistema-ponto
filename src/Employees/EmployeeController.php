@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Users;
+namespace App\Employees;
 
 use App\Model\Query;
 
 /**
- * Class UserController
- * @package App\Users\Controllers
+ * Class EmployeeController
+ * @package App\Employees
  */
-class UserController
+class EmployeeController
 {
-    CONST TABLE = 'users';
+    CONST TABLE = 'employees';
 
     /**
      * @return array|\Exception|\PDOException

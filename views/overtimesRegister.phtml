@@ -1,0 +1,125 @@
+<?php
+$id = "";
+$created_at = "";
+$dt = "";
+$in_am = "00:00";
+$ria = "";
+$out_am = "00:00";
+$roa = "";
+$in_pm = "00:00";
+$rip = "";
+$out_pm = "00:00";
+$rop = "";
+$in_ng = "00:00";
+$rin = "";
+$out_ng = "00:00";
+$ron = "";
+if (isset($overtime['id'])) {
+    $id = $overtime['id'];
+}
+if (isset($overtime['created_at'])) {
+    $created_at = $overtime['created_at'];
+    $dt = "readonly";
+}
+if (isset($overtime['in_am'])) {
+    $in_am = $overtime['in_am'];
+    if ($overtime['in_am'] != "00:00:00") {
+        $ria = "readonly";
+    }
+}
+if (isset($overtime['out_am'])) {
+    $out_am = $overtime['out_am'];
+    if ($overtime['out_am'] != "00:00:00") {
+        $roa = "readonly";
+    }
+}
+if (isset($overtime['in_pm'])) {
+    $in_pm = $overtime['in_pm'];
+    if ($overtime['in_pm'] != "00:00:00") {
+        $rip = "readonly";
+    }
+}
+if (isset($overtime['out_pm'])) {
+    $out_pm = $overtime['out_pm'];
+    if ($overtime['out_pm'] != "00:00:00") {
+        $rop = "readonly";
+    }
+}
+if (isset($overtime['in_ng'])) {
+    $in_ng = $overtime['in_ng'];
+    if ($overtime['in_ng'] != "00:00:00") {
+        $rin= "readonly";
+    }
+}
+if (isset($overtime['out_ng'])) {
+    $out_ng = $overtime['out_ng'];
+    if ($overtime['out_ng'] != "00:00:00") {
+        $ron = "readonly";
+    }
+}
+
+include "Layout/header.phtml";
+?>
+    <section class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        Banco de Horas
+                        <a href="/overtimes"><button class="btn-sm btn-primary custom-right"><i class="fa fa-arrow-left"></i></button></a>
+                    </div>
+                    <div class="card-body">
+                        <form method="post" action="/overtimes/save">
+                            <input type="hidden" name="id" value="<?php echo $id; ?>">
+                            <input type="hidden" name="employee_id" value="<?php echo $employee_id; ?>">
+                            <div class="row">
+                                <div class="col-md-4"></div>
+                                <div class="col-md-4">
+                                    <span class="input-group-text text-center">Data</span>
+                                    <input type="date" name="created_at" class="form-control text-center" autocomplete="off" value="<?php echo $created_at; ?>" <?=$dt;?> aria-describedby="basic-addon1" />
+                                </div>
+                                <div class="col-md-4"></div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <span class="input-group-text text-center">Entrada Manhã</span>
+                                    <input type="time" name="in_am" class="form-control text-center" autocomplete="off" placeholder="00:00" value="<?php echo $in_am; ?>" <?=$ria;?> aria-describedby="basic-addon1" />
+                                </div>
+                                <div class="col-md-2">
+                                    <span class="input-group-text text-center" id="basic-addon1">Saída Manhã</span>
+                                    <input type="time" name="out_am" class="form-control text-center" autocomplete="off" placeholder="00:00" value="<?php echo $out_am; ?>" <?=$roa;?> aria-describedby="basic-addon1">
+                                </div>
+
+                                <div class="col-md-2">
+                                    <span class="input-group-text text-center" id="basic-addon1">Entrada Vespertina</span>
+                                    <input type="time" name="in_pm" class="form-control text-center" autocomplete="off" placeholder="00:00" value="<?php echo $in_pm; ?>" <?=$rip;?> aria-describedby="basic-addon1" />
+                                </div>
+                                <div class="col-md-2">
+                                    <span class="input-group-text text-center" id="basic-addon1">Saída Vespertina</span>
+                                    <input type="time" name="out_pm" class="form-control text-center" autocomplete="off" placeholder="00:00" value="<?php echo $out_pm; ?>" <?=$rop;?> aria-describedby="basic-addon1">
+                                </div>
+                                <div class="col-md-2">
+                                    <span class="input-group-text text-center" id="basic-addon1">Entrada Noite</span>
+                                    <input type="time" name="in_ng" class="form-control text-center" autocomplete="off" placeholder="00:00" value="<?php echo $in_ng; ?>" <?=$rin;?> aria-describedby="basic-addon1" />
+                                </div>
+                                <div class="col-md-2">
+                                    <span class="input-group-text text-center" id="basic-addon1">Saída Noite</span>
+                                    <input type="time" name="out_ng" class="form-control text-center" autocomplete="off" placeholder="00:00" value="<?php echo $out_ng; ?>" <?=$ron;?> aria-describedby="basic-addon1">
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-success btn-sm">Salvar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<?php include 'Layout/footer.phtml';?>

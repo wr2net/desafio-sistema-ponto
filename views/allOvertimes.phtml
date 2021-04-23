@@ -1,0 +1,55 @@
+<?php include 'Layout/header.phtml'; ?>
+    <section class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        Banco de Horas
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-striped table-dark table-hover" id="table">
+                            <thead>
+                            <tr>
+                                <th scope="col" width="1%">#</th>
+                                <th scope="col">Colaborador</th>
+                                <th scope="col">Data</th>
+                                <th scope="col">Entrada Manhã</th>
+                                <th scope="col">Saída Manhã</th>
+                                <th scope="col">Entrada Vespertina</th>
+                                <th scope="col">Saída Vespertina</th>
+                                <th scope="col">Entrada Noite</th>
+                                <th scope="col">Saída Noite</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                            $count = 1;
+                            foreach ($overtimes['data'] as $value) {
+                                $ct = ($count < 10) ? '0' . $count : $count;
+                                $create = explode(" ", $value['created_at']);
+                                $create = explode("-", $create[0]);
+                                $created_at = $create[2] . "/" . $create[1] . "/" . $create[0];
+                            ?>
+                            <tr>
+                                <td class="text-center" scope="row"><?=$ct;?></td>
+                                <th><?=$value['name'];?></td>
+                                <th><?=$created_at;?></td>
+                                <th><?=$value['in_am'];?></th>
+                                <th><?=$value['out_am'];?></th>
+                                <th><?=$value['in_pm'];?></th>
+                                <th><?=$value['out_pm'];?></th>
+                                <th><?=$value['in_ng'];?></th>
+                                <th><?=$value['out_ng'];?></th>
+                            </tr>
+                            <?php
+                                $count++;
+                            }
+                            ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<?php include 'Layout/footer.phtml';?>
