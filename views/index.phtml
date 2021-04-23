@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wagner Rigoli da Rosa</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../public/assets/img/favicons/favicon.png">
+    <link rel="stylesheet" crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400&amp;display=swap" rel="stylesheet">
+    <link href="../public/assets/css/theme.css" rel="stylesheet" />
+    <link href="../public/vendors/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="../public/assets/css/custom.css" rel="stylesheet" />
+    <script src="../public/assets/js/jquery.js"></script>
+</head>
+<body>
+<section class="custom-container">
+    <div class="main" id="index">
+        <nav class="navbar navbar-light sticky-top" data-navbar-darken-on-scroll="900">
+            <div class="container pt-2"><a class="navbar-brand" href="/"> <img src="../public/assets/img/logo.png" alt="Wagner Rigoli da Rosa" /></a>
+                <div class="navbar-nav ms-auto">
+                    <button class="btn btn-secondary" onclick="showLoginScreen()">Acesso</button>
+                </div>
+            </div>
+        </nav>
+        <section class="mt-6">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-9 col-lg-8 col-xl-5">
+                        <h1 class="display-3 lh-sm">Sistema de Banco de Horas</h1>
+                    </div>
+                    <div class="col-md-9 col-xl-5">
+                        <p class="fs-2">Um sistema simples para registro de banco de horas dos colaboradores de sua empresa.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="main" id="login">
+        <nav class="navbar navbar-light sticky-top" data-navbar-darken-on-scroll="900">
+            <div class="container pt-2"><a class="navbar-brand" href="/"> <img src="../public/assets/img/logo.png" alt="Wagner Rigoli da Rosa" /></a>
+                <div class="navbar-nav ms-auto">
+                    <button class="btn btn-secondary" onclick="showIndexScreen()">Voltar</button>
+                </div>
+            </div>
+        </nav>
+        <section class="mt-6">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="login-box">
+                        <form method="post" action="/login">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">E-mail</span>
+                                </div>
+                                <input type="email" id="email" name="email" class="form-control" placeholder="Informe um e-mail válido." aria-label="E-mail" aria-describedby="basic-addon1" required>
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">Senha</span>
+                                </div>
+                                <input type="password" id="password" name="password" class="form-control" placeholder="**********" aria-label="Password" aria-describedby="basic-addon1" required>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-secondary btn-lg" onclick="checkInput()">Entrar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="bg-secondary custom-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p class="mb-0">&copy; Todos os direitos reservados para <a class="text-300" href="https://wagner.rigolidarosa.com/pt-br/" target="_blank"> Wagner Rigoli da Rosa</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</section>
+<script src="../public/assets/js/custom.js"></script>
+</body>
+</html>
